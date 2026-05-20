@@ -7,7 +7,6 @@ root = Tk()
 root.title("Monthly Expense Tracker")
 root.geometry("420x400")
 
-# ---------- FUNCTIONS ----------
 
 def add_expense():
     date = date_entry.get()
@@ -44,7 +43,6 @@ def show_graph():
     plt.title("Monthly Expense Graph")
     plt.show()
 
-# ---------- UI DESIGN ----------
 
 Label(root, text="Expense Tracker", font=("Arial", 18, "bold")).pack(pady=10)
 
