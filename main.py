@@ -5,7 +5,7 @@ from db import get_connection
 
 selected_id = None
 
-# ---------------- DATABASE ----------------
+
 
 def load_expenses(month=None):
     tree.delete(*tree.get_children())
@@ -102,7 +102,6 @@ def show_graph():
     plt.ylabel("Amount")
     plt.show()
 
-# ---------------- GUI ----------------
 
 root = tk.Tk()
 root.title("Expense Manager")
@@ -125,7 +124,6 @@ style.configure(
     font=("Segoe UI", 10)
 )
 
-# -------- HEADER --------
 tk.Label(
     root,
     text="Expense Manager",
@@ -135,7 +133,6 @@ tk.Label(
     pady=10
 ).pack(fill=tk.X)
 
-# -------- FORM --------
 form = tk.Frame(root, bg="#f4f6f8")
 form.pack(pady=10)
 
@@ -158,7 +155,6 @@ lbl("Date (YYYY-MM-DD)", 1, 2)
 date = tk.Entry(form, width=20)
 date.grid(row=1, column=3)
 
-# -------- BUTTONS --------
 btns = tk.Frame(root, bg="#f4f6f8")
 btns.pack()
 
@@ -167,7 +163,7 @@ tk.Button(btns, text="Update", bg="#007bff", fg="white", width=12, command=updat
 tk.Button(btns, text="Delete", bg="#dc3545", fg="white", width=12, command=delete_expense).grid(row=0, column=2, padx=5)
 tk.Button(btns, text="Graph", bg="#17a2b8", fg="white", width=12, command=show_graph).grid(row=0, column=3, padx=5)
 
-# -------- FILTER --------
+
 filter_frame = tk.Frame(root, bg="#f4f6f8")
 filter_frame.pack(pady=10)
 
@@ -178,7 +174,7 @@ month_entry.pack(side=tk.LEFT, padx=5)
 tk.Button(filter_frame, text="Apply", command=lambda: load_expenses(month_entry.get())).pack(side=tk.LEFT)
 tk.Button(filter_frame, text="Reset", command=lambda: load_expenses()).pack(side=tk.LEFT, padx=5)
 
-# -------- TABLE --------
+
 columns = ("ID", "Title", "Amount", "Category", "Date")
 tree = ttk.Treeview(root, columns=columns, show="headings")
 
